@@ -2,6 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+Create .env in root direcotry
+```
+DB_URI = mongodb://localhost:27017/example
+```
+
 First, run the development server:
 
 ```bash
