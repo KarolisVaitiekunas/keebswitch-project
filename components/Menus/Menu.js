@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     minWidth: "70px",
     width: "70px",
-    padding: "10px",
+    padding: 0,
   },
 }));
 
@@ -107,13 +107,13 @@ export default function Menu() {
           <Tab
             className={classes.tab}
             label={
-              <Badge badgeContent={pinList.length} color="primary">
-                <PinMenu toggleDrawer={toggleDrawer} type={types2[1]}>
+              <PinMenu toggleDrawer={toggleDrawer} type={types2[1]}>
+                <Badge badgeContent={pinList.length} color="primary">
                   <PinSvg selectedButton={selectedButton2} type={types2[1]} />
-                </PinMenu>
-              </Badge>
+                </Badge>
+              </PinMenu>
             }
-            {...a11yProps(1)}
+            {...a11yProps(2)}
           />
           <Tab
             onClick={() => setSelectedButton(types[0])}
@@ -123,7 +123,7 @@ export default function Menu() {
                 <FilterLowerSvg selectedButton={selectedButton} type={types[0]} />
               </FilterLowerMenu>
             }
-            {...a11yProps(1)}
+            {...a11yProps(3)}
           />
           <Tab
             onClick={() => setSelectedButton(types[1])}
@@ -133,7 +133,7 @@ export default function Menu() {
                 <FilterHigherSvg selectedButton={selectedButton} type={types[1]} />
               </FilterHigherMenu>
             }
-            {...a11yProps(1)}
+            {...a11yProps(4)}
           />
         </Tabs>
       </AppBar>

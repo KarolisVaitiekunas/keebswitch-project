@@ -10,6 +10,11 @@ import { PinContext } from "../../Context/PinContext";
 import PinMenuItems from "./PinMenuItems";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100%",
+    width: "100%",
+    padding: "5px",
+  },
   list: {
     width: 450,
     [theme.breakpoints.down("sm")]: {
@@ -22,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
   List: {
     width: "100%",
     backgroundColor: theme.palette.background.paper,
+  },
+  icon: {
+    height: "40%",
   },
 }));
 
@@ -66,7 +74,7 @@ export default function PinMenu({ children, toggleDrawer, type }) {
   );
 
   return (
-    <div>
+    <div className={classes.root}>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className={classes.icon} onClick={toggleDrawer(anchor, true, state, setState, type)}>

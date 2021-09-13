@@ -8,7 +8,11 @@ function FilterLowerMenu({ children, filterObject, setFilterObject, partData, se
     const data = await response.json();
     setPartData(data.data);
   };
-  return <div onClick={handleSearchByLower}>{children}</div>;
+  return (
+    <div style={{ width: "100%", height: "100%" }} onClick={handleSearchByLower}>
+      {children}
+    </div>
+  );
 }
 
 export default FilterLowerMenu;

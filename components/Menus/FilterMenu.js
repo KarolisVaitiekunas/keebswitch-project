@@ -7,6 +7,11 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Selector from "../Selectors/Selector";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    height: "100%",
+    width: "100%",
+  },
+
   list: {
     height: "100%",
     width: 450,
@@ -61,7 +66,7 @@ export default function FilterMenu({ children, toggleDrawer, type }) {
   );
 
   return (
-    <div>
+    <div className={classes.root}>
       {["left"].map((anchor) => (
         <React.Fragment key={anchor}>
           <div className={classes.icon} onClick={toggleDrawer(anchor, true, state, setState, type)}>

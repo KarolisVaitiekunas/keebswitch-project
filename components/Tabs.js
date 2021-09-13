@@ -43,7 +43,7 @@ function TabPanel(props) {
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    maxWidth: "1400px",
+    maxWidth: "1450px",
     marginLeft: "auto",
     marginRight: "auto",
   },
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
 function TabsPanel({ filterObject, setFilterObject, partData, setPartData }) {
   const classes = useStyles();
   const [value, setValue] = useState(0);
-  const tabs = ["SWITCHES", "STABILIZERS", "KEYCAPS", "PLATES", "PCBS", "CASES", "ACCESORIES", "DIY KITS"];
+  const tabs = ["SWITCHES", "KEYCAPS", "PLATE", "STABILIZERS", "PCB", "CASE", "DIY", "PRE-BUILT", "ACCESSORIES"];
 
   // const handleChangeType = async (newValue) => {
   //   const temporaryFilterObject = { ...filterObject, type: newValue.toString() };

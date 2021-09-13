@@ -63,6 +63,7 @@ export const updateParts = async (data) => {
 export const getParts = async (filterObject, sort) => {
   dbConnect();
   const parts = await partModel.find(filterObject).sort({ productPrice: sort });
+  console.log(parts[0]);
 
   return parts;
 };
@@ -75,8 +76,6 @@ export const getPartById = async (body) => {
     const _part = await partModel.findById(part.id);
     parts.push(_part);
   }
-
-  console.log("PARTS ", parts);
 
   return parts;
 };

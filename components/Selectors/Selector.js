@@ -146,7 +146,7 @@ function Selector() {
     // { Region: "Africa", selected: true, shop: "ctrlshiftesc" },
 
     {
-      Region: "Oceania",
+      Region: "USA",
       selected: Array.isArray(filterObject.website)
         ? Array.isArray(filterObject.website) && filterObject.website.includes("divinikey")
           ? true

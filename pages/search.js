@@ -76,9 +76,10 @@ function Search({ data }) {
 }
 
 export const getStaticProps = async () => {
+  // availability: { $exists: true },
   let data = await getParts({
     productName: { $regex: "" },
-    availability: { $exists: true },
+    availability: "IN-STOCK",
     productPrice: { $gte: 0, $lte: 100000 },
     website: { $exists: true },
     type: "switches",
@@ -91,6 +92,8 @@ export const getStaticProps = async () => {
         productPrice: part.productPrice,
         availability: part.availability,
         website: part.website,
+        region: part.region,
+        url: part.url,
         _id: part._id.toString(),
       })),
     },

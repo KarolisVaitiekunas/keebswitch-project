@@ -28,6 +28,10 @@ const partSchema = new mongoose.Schema({
     type: String,
     required: false,
   },
+  url: {
+    type: String,
+    required: false,
+  },
 });
 
 export default mongoose.models.scrapedkeyboards || mongoose.model("scrapedkeyboards", partSchema);

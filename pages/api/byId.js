@@ -8,7 +8,6 @@ const index = async (req, res) => {
     case "POST":
       try {
         const body = await JSON.parse(req.body);
-        console.log("BODY: ", body);
         let parts = await getPartById(body);
         //console.log("GOTTEN PARTS::::::: ", parts);
         return res.status(200).json({ success: true, data: parts });

@@ -99,7 +99,7 @@ function TablePaginationActions(props) {
 const useStyles = makeStyles((theme) => ({
   root: {
     height: "auto",
-    maxWidth: "1400px",
+    maxWidth: "1450px",
     marginLeft: "auto",
     marginRight: "auto",
     [theme.breakpoints.down("xs")]: {
@@ -209,13 +209,19 @@ function Products({ partData, setPartData }) {
                       id={row._id}
                       isPinned={row.isPinned ? true : false}
                     />
-                    {row.isPinned ? "PINNED" : row.productName}
+                    {row.isPinned ? (
+                      "PINNED"
+                    ) : (
+                      <div style={{ cursor: "pointer" }} onClick={() => window.open(row.url, "_blank")}>
+                        {row.productName}
+                      </div>
+                    )}
                   </div>
                 </StyledTableCell>
-                <StyledTableCell align="right">{row.productPrice}</StyledTableCell>
+                <StyledTableCell align="right">$ {row.productPrice}</StyledTableCell>
                 <StyledTableCell align="right">{row.availability}</StyledTableCell>
                 <StyledTableCell align="right">{row.website}</StyledTableCell>
-                <StyledTableCell align="right">Lenkija</StyledTableCell>
+                <StyledTableCell align="right">{row.region}</StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

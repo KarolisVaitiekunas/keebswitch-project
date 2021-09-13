@@ -5,7 +5,11 @@ function FilterHigherMenu({ children, filterObject, setFilterObject, partData, s
     const data = await response.json();
     setPartData(data.data);
   };
-  return <div onClick={handleSearchByHigher}>{children}</div>;
+  return (
+    <div style={{ width: "100%", height: "100%" }} onClick={handleSearchByHigher}>
+      {children}
+    </div>
+  );
 }
 
 export default FilterHigherMenu;
