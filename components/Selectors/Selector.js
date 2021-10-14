@@ -113,7 +113,6 @@ function Selector() {
   const [availability, setAvailability] = React.useState(filterObject.availability || "");
 
   const handleChangeAvailability = (event) => {
-    console.log(event.target.value);
     setFilterObject({ ...filterObject, availability: event.target.value });
 
     setAvailability(event.target.value);
@@ -122,7 +121,6 @@ function Selector() {
   //PRICE
   const [prices, setPrices] = React.useState([filterObject.productPrice.$gte, filterObject.productPrice.$lte] || [0, 1000]);
   const handlePriceChange = (event, newValue) => {
-    console.log(newValue);
     setFilterObject({ ...filterObject, productPrice: { $gte: newValue[0], $lte: newValue[1] } });
     setPrices(newValue);
   };
@@ -265,6 +263,7 @@ function Selector() {
               <Grid className={classes.gridItem} xs={6} item key={index}>
                 <Typography className={classes.regionTitle}>{region.region}</Typography>
                 <Checkbox
+                  disabled={true}
                   checked={region.selected}
                   onChange={(event) => handleChangeRegion(event, index)}
                   inputProps={{ "aria-label": "primary checkbox" }}
@@ -282,7 +281,12 @@ function Selector() {
             return (
               <Grid className={classes.gridItem} xs={6} item key={index}>
                 <Typography className={classes.regionTitle}>{vendor.shop}</Typography>
-                <Checkbox checked={Vendors[index].selected} onChange={(event) => handleChangeVendor(event, index)} name={vendor.shop} />
+                <Checkbox
+                  disabled={true}
+                  checked={Vendors[index].selected}
+                  onChange={(event) => handleChangeVendor(event, index)}
+                  name={vendor.shop}
+                />
               </Grid>
             );
           })}

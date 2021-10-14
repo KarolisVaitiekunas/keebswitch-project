@@ -161,7 +161,6 @@ function Products({ partData, setPartData }) {
   const handleSearchByText = async () => {
     const response = await fetch("/api/data", { method: "POST", body: JSON.stringify(filterObject) });
     const data = await response.json();
-    console.log(data);
     setPartData(data.data);
   };
 
@@ -204,6 +203,7 @@ function Products({ partData, setPartData }) {
                     <PinProduct
                       productName={row.productName}
                       website={row.website}
+                      url={row.url}
                       availability={row.availability}
                       productPrice={row.productPrice}
                       id={row._id}

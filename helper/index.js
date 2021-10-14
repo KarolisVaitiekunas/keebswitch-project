@@ -4,10 +4,6 @@ import { dbConnect } from "../utils/dbConnect";
 export const updateParts = async (data) => {
   dbConnect();
 
-  //await partModel.deleteMany();
-
-  console.log(data);
-
   const DBparts = await partModel.find();
   const keys = Object.keys(data);
 
@@ -46,11 +42,9 @@ export const updateParts = async (data) => {
 
       if (existsInNewData === false) {
         //if it doesnt exist in upcoming data, delete from db
-        console.log("DELETING: ", DBpart_.productName);
         await DBpart_.deleteOne();
       }
       if (existsInNewData) {
-        console.log("DBPART: ", DBpart_);
         await partModel.updateOne(
           { _id: DBpart_._id },
           { $set: { productPrice: existingItemInNewData.productPrice, availability: existingItemInNewData.availability } }
@@ -63,7 +57,6 @@ export const updateParts = async (data) => {
 export const getParts = async (filterObject, sort) => {
   dbConnect();
   const parts = await partModel.find(filterObject).sort({ productPrice: sort });
-  console.log(parts[0]);
 
   return parts;
 };

@@ -62,6 +62,7 @@ export default function PinMenu({ children, toggleDrawer, type }) {
               key={index}
               productName={product.productName}
               website={product.website}
+              url={product.url}
               availability={product.availability}
               productPrice={product.productPrice}
               isUknown={product.isUknown}

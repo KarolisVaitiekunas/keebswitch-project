@@ -8,7 +8,7 @@ import TransitionsModal from "../TransitionModal";
 //context
 import { PinContext } from "../../Context/PinContext";
 
-function PinProduct({ productName, website, availability, productPrice, id }) {
+function PinProduct({ productName, website, url, availability, productPrice, id }) {
   const { setPinList, pinList } = useContext(PinContext);
   const [clicked, setClicked] = useState(false);
 
@@ -17,7 +17,7 @@ function PinProduct({ productName, website, availability, productPrice, id }) {
   const handleOpen = () => {
     setOpen(true);
   };
-  const item = [{ productName: productName, website: website, availability: availability, productPrice: productPrice, id: id }];
+  const item = [{ productName: productName, website: website, url: url, availability: availability, productPrice: productPrice, id: id }];
 
   const handleClick = () => {
     setClicked(!clicked);

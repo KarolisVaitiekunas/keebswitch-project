@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PinMenuItems({ productName, website, availability, productPrice, handleDelete, isUknown }) {
+export default function PinMenuItems({ productName, website, url, availability, productPrice, handleDelete, isUknown }) {
   const classes = useStyles();
   const theme = useTheme();
 
@@ -41,7 +41,12 @@ export default function PinMenuItems({ productName, website, availability, produ
         </ListItemAvatar>
         <ListItemText
           primary={
-            <Typography style={{ color: isUknown ? "red" : theme.palette.primary }} className={classes.mainTitle} component="h6">
+            <Typography
+              style={{ color: isUknown ? "red" : theme.palette.primary, cursor: "pointer" }}
+              className={classes.mainTitle}
+              component="h6"
+              onClick={() => window.open(url)}
+            >
               {productName}
             </Typography>
           }

@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-console.log(process.env.DB_URI);
 
 const connection = {};
 
@@ -17,8 +16,5 @@ export const dbConnect = async () => {
     });
 
     connection.isConnected = db.connections[0].readyState;
-    console.log("Connected to database");
-  } catch (error) {
-    console.log(error);
-  }
+  } catch (error) {}
 };

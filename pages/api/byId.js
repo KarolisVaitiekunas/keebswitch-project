@@ -9,10 +9,8 @@ const index = async (req, res) => {
       try {
         const body = await JSON.parse(req.body);
         let parts = await getPartById(body);
-        //console.log("GOTTEN PARTS::::::: ", parts);
         return res.status(200).json({ success: true, data: parts });
       } catch (error) {
-        console.log(error);
         return res.status(500).json({ success: false, error: error });
       }
 
