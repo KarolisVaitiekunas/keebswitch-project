@@ -4,8 +4,9 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Create .env in root direcotry
 ```
-DB_URI = mongodb://localhost:27017/example
+DB_URI = mongodb://18.196.17.217:27017/keebsswitch
 ```
+This will be connecting to the mongoDB database.
 
 First, run the development server:
 
